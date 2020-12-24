@@ -51,4 +51,11 @@ describe("makeComponent", () => {
     expect(ref.current!.parent).not.toBeUndefined()
     expect(ref.current!.parent).toEqual(parentRef.current)
   })
+
+  it("optionally accepts an existing object instead of creating its own", () => {
+    const mesh = new Mesh()
+
+    render(<Component object={mesh} ref={ref} />)
+    expect(ref.current).toBe(mesh)
+  })
 })
