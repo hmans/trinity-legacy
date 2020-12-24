@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
 import React from "react"
 import { Mesh } from "three"
-import { Primitive } from "./Primitive"
+import { Primitive } from "../../src/reactor/Primitive"
 
 describe("Primitive", () => {
   it("accepts any THREE object and manages it", () => {
