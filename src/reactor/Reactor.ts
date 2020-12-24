@@ -20,9 +20,7 @@ type Reactor = {
  * The Trinity proxy object. Insert documentation here.
  */
 
-const reactorCache = {} as Reactor
-
-export const Reactor = new Proxy<Reactor>(reactorCache, {
+export const Reactor = new Proxy<Reactor>({} as Reactor, {
   get: (cache, prop) => {
     const name = prop.toString() as keyof THREE
 
