@@ -1,5 +1,5 @@
 {
-  "name": "@hmans/trinity",
+  "name": "t5y",
   "private": false,
   "version": "0.0.1",
   "repository": "git@github.com:hmans/trinity.git",
@@ -27,5 +27,6 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "three": "^0.124.0"
-  }
+  },
+  "dependencies": {}
 }
