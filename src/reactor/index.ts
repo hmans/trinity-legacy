@@ -1,9 +1,6 @@
-import { Reactor } from "./Reactor"
-import { Primitive } from "./Primitive"
-
-export { Reactor, Primitive }
 export { forwardRefReactor } from "./forwardRefReactor"
-export { useManagedThreeObject } from "./useManagedThreeObject"
+export { makeComponent } from "./makeComponent"
+export { Primitive } from "./Primitive"
+export { Reactor } from "./Reactor"
 export * from "./types"
-
-export default Reactor
+export { useManagedThreeObject } from "./useManagedThreeObject"
