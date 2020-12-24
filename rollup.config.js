@@ -3,7 +3,8 @@ import typescript from "rollup-plugin-typescript2"
 import pkg from "./package.json"
 
 const config = {
-  terser: false
+  terser: false,
+  sourcemaps: true
 }
 
 const defaults = {
@@ -23,7 +24,7 @@ export default [
     output: {
       file: pkg.module,
       format: "esm",
-      sourcemap: true
+      sourcemap: config.sourcemaps
     }
   },
   {
@@ -31,7 +32,7 @@ export default [
     output: {
       file: pkg.main,
       format: "cjs",
-      sourcemap: true
+      sourcemap: config.sourcemaps
     }
   }
 ]
