@@ -1,7 +1,7 @@
-import { makeComponent } from "./makeComponent"
-import { ReactorComponent } from "./types"
 import * as THREE from "three"
 import { IConstructable } from "../common"
+import { makeComponent } from "./makeComponent"
+import { ReactorComponent } from "./types"
 
 /**
  * A bit of typing magic that will register all of the classes in THREE.* underneath our
@@ -28,12 +28,14 @@ export const Reactor = new Proxy<Reactor>(reactorCache, {
 
     /* Create and memoize a wrapper component for the specified symbol. */
     if (!cache[name]) {
+      /* Try and find a constructor within the THREE namespace. */
       const constructor = THREE[name as keyof typeof THREE] as IConstructable
 
+      /* If nothing could be found, bail. */
       if (!constructor)
-        console.error(
-          `Can't find THREE.${name}, so I can't create a component around it, either. Boo!`
-        )
+        return undefined
+
+        /* Otherwise, create and memoize a component for that constructor. */
       ;(cache[name] as ReactorComponent<typeof constructor>) = makeComponent(constructor, name)
     }
 
