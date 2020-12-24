@@ -1,5 +1,6 @@
 import { terser } from "rollup-plugin-terser"
 import typescript from "rollup-plugin-typescript2"
+
 import pkg from "./package.json"
 
 const config = {
@@ -9,7 +10,7 @@ const config = {
 
 const defaults = {
   input: "src/index.ts",
-  external: ["react", "three", "react/jsx-runtime"],
+  external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
   plugins: [
     typescript({
       typescript: require("typescript")
