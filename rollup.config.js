@@ -2,14 +2,18 @@ import { terser } from "rollup-plugin-terser"
 import typescript from "rollup-plugin-typescript2"
 import pkg from "./package.json"
 
+const config = {
+  terser: false
+}
+
 const defaults = {
   input: "src/index.ts",
-  external: ["react"],
+  external: ["react", "three", "react/jsx-runtime"],
   plugins: [
     typescript({
       typescript: require("typescript")
     }),
-    terser()
+    config.terser && terser()
   ]
 }
 
