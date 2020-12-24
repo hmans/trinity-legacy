@@ -1,8 +1,8 @@
 import { useEffect } from "react"
-import { useTrinity } from "./useTrinity"
+import { useEngine } from "./useEngine"
 
-export const onResize = (fn: (width: number, height: number) => void, deps?: []) => {
-  const { renderer } = useTrinity()
+export const useOnResize = (fn: (width: number, height: number) => void, deps?: []) => {
+  const { renderer } = useEngine()
 
   useEffect(() => {
     const handleResize = () => {

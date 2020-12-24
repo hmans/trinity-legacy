@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import { onRender, useTrinity } from "./hooks"
+import { useOnRender, useEngine } from "./hooks"
 
 export const useSceneRendering = (
   scene: THREE.Scene,
@@ -9,10 +9,10 @@ export const useSceneRendering = (
     render: boolean
   } = { clear: true, render: true }
 ) => {
-  const { renderer } = useTrinity()
+  const { renderer } = useEngine()
 
   if (options.render)
-    onRender(() => {
+    useOnRender(() => {
       if (!camera || !scene) return
 
       renderer.clearDepth()
