@@ -1,6 +1,6 @@
 {
-  "name": "trinity",
-  "version": "1.0.0",
+  "name": "@t5y/trinity",
+  "version": "0.0.1",
   "repository": "git@github.com:hmans/trinity.git",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
