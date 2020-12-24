@@ -1,0 +1,8 @@
+{
+  "name": "trinity",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hmans/trinity.git",
+  "author": "Hendrik Mans <hendrik@mans.de>",
+  "license": "MIT"
+}
