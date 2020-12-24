@@ -31,7 +31,9 @@ export const Reactor = new Proxy<Reactor>(reactorCache, {
       const constructor = THREE[name as keyof typeof THREE] as IConstructable
 
       if (!constructor)
-        throw `Can't find THREE.${name}, so I can't create a component around it, either. Boo!`
+        console.error(
+          `Can't find THREE.${name}, so I can't create a component around it, either. Boo!`
+        )
       ;(cache[name] as ReactorComponent<typeof constructor>) = makeComponent(constructor, name)
     }
 
