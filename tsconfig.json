@@ -4,11 +4,15 @@
     "module": "es2015",
     "moduleResolution": "node",
     "declaration": true,
+    "outDir": "dist",
     "strict": true,
     "jsx": "react-jsx",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "dist", "test"]
 }
