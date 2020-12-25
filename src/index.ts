@@ -2,7 +2,8 @@
 export { Reactor, useManagedThreeObject, makeComponent } from "./reactor"
 
 /* Engine */
-export { Engine, Scene } from "./engine"
+export { Engine } from "./engine/Engine"
+export { Scene, useScene } from "./engine/Scene"
 export * from "./engine/hooks"
 
 /* Default export */
