@@ -1,4 +1,5 @@
 export * from "./useAutomaticTriggerFrame"
+export * from "./useCamera"
 export * from "./useEngine"
 export * from "./useOnFrame"
 export * from "./useOnLateUpdate"
