@@ -17,20 +17,6 @@ type Reactor = {
     : undefined
 }
 
-// const makeReactor = () => {
-//   const reactor = {} as Reactor
-
-//   for (const key in THREE) {
-//     Object.assign(reactor, {
-//       [key]: makeComponent(THREE[key as THREEKey] as IConstructable, key)
-//     })
-//   }
-
-//   return reactor
-// }
-
-// export const Reactor = makeReactor()
-
 const cache = {} as Record<string, ReactorComponent<any>>
 
 /**
