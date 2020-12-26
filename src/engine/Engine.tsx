@@ -5,7 +5,7 @@ import { EngineContext } from "./EngineContext"
 import { useEngineEventHandling } from "./useEngineEventHandling"
 import { useEngineLoop } from "./useEngineLoop"
 import { useEngineRenderer } from "./useEngineRenderer"
-import { useEngineStats, useEngineStatsViewer } from "./useEngineStats"
+import { useEngineStats } from "./useEngineStats"
 
 type EngineProps = {
   width?: string

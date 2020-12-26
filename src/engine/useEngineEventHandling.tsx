@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from "react"
 import * as THREE from "three"
-import { ThreeObjectWithOptionalEventHandlers, TrinityPointerEvent } from "./types"
+import { ThreeObjectWithOptionalEventHandlers, TrinityPointerEvent } from "../types"
 
 export const useEngineEventHandling = (root: THREE.Object3D) => {
   const makeEventHandler = useCallback(

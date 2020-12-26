@@ -1,12 +1,12 @@
 import { RefObject, useState } from "react"
 import * as THREE from "three"
-import { ThreeObjectWithOptionalEventHandlers, TrinityPointerEvent } from "."
-import { useTrinity } from "./hooks"
+import { ThreeObjectWithOptionalEventHandlers, TrinityPointerEvent } from "../types"
+import { useEngine } from "./hooks"
 import { intersectInList } from "../common"
 import { normalizePointerPosition } from "../common/normalizePointerPosition"
 
 export const useSceneEventHandling = (scene: THREE.Scene, camera: THREE.Camera | undefined) => {
-  const { renderer } = useTrinity()
+  const { renderer } = useEngine()
 
   /* Some mutable internal state */
   const [internalState] = useState(() => ({

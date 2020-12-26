@@ -1,20 +1,23 @@
 {
-  "name": "t5y",
+  "name": "@hmans/trinity",
   "private": false,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": "git@github.com:hmans/trinity.git",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "cjs/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "**"
+    "dist",
+    "cjs"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "dev": "yarn clean && rollup -c -w",
-    "build": "yarn clean && rollup -c",
+    "clean": "rimraf dist cjs",
+    "build": "yarn clean && yarn build:ts",
+    "build:ts": "tsc",
+    "build:rollup": "rollup -c",
+    "watch": "yarn build:ts -w",
     "test": "jest"
   },
   "devDependencies": {
@@ -27,6 +30,8 @@
     "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.35.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "three": "^0.124.0",

@@ -1,5 +1,5 @@
 import { forwardRef, ForwardRefRenderFunction } from "react"
-import { ReactorComponentProps } from "./types"
+import { ReactorComponentProps } from "../types"
 
 type ModifiedProps<T, O> = Omit<ReactorComponentProps<T>, keyof O> & O
 

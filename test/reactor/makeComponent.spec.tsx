@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react"
 import React from "react"
 import { Mesh, Vector3 } from "three"
-import { ThreeObjectWithOptionalEventHandlers } from "../engine"
-import { makeComponent } from "./makeComponent"
+import { ThreeObjectWithOptionalEventHandlers } from "../../src/engine"
+import { makeComponent } from "../../src/reactor/makeComponent"
 
 describe("makeComponent", () => {
   const Component = makeComponent(Mesh)
@@ -50,5 +50,12 @@ describe("makeComponent", () => {
 
     expect(ref.current!.parent).not.toBeUndefined()
     expect(ref.current!.parent).toEqual(parentRef.current)
+  })
+
+  it("optionally accepts an existing object instead of creating its own", () => {
+    const mesh = new Mesh()
+
+    render(<Component object={mesh} ref={ref} />)
+    expect(ref.current).toBe(mesh)
   })
 })

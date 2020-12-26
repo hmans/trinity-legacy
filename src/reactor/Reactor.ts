@@ -1,7 +1,6 @@
-import { makeComponent } from "./makeComponent"
-import { ReactorComponent } from "./types"
 import * as THREE from "three"
-import { IConstructable } from "../common"
+import { IConstructable, ReactorComponent } from "../types"
+import { makeComponent } from "./makeComponent"
 
 /**
  * A bit of typing magic that will register all of the classes in THREE.* underneath our
@@ -10,29 +9,46 @@ import { IConstructable } from "../common"
 
 type THREE = typeof THREE
 
+type THREEKey = keyof THREE
+
 type Reactor = {
-  [K in keyof THREE]: THREE[K] extends IConstructable
+  [K in THREEKey]: THREE[K] extends IConstructable
     ? ReactorComponent<InstanceType<THREE[K]>>
     : undefined
 }
 
+// const makeReactor = () => {
+//   const reactor = {} as Reactor
+
+//   for (const key in THREE) {
+//     Object.assign(reactor, {
+//       [key]: makeComponent(THREE[key as THREEKey] as IConstructable, key)
+//     })
+//   }
+
+//   return reactor
+// }
+
+// export const Reactor = makeReactor()
+
+const cache = {} as Record<string, ReactorComponent<any>>
+
 /**
- * The Trinity proxy object. Insert documentation here.
+ * The Trinity Reactor. For every class exposed by THREE, this object contains a
+ * Trinity component that wraps the class (see `makeComponent`.)
  */
-
-const reactorCache = {} as Reactor
-
-export const Reactor = new Proxy<Reactor>(reactorCache, {
-  get: (cache, prop) => {
-    const name = prop.toString() as keyof THREE
-
-    /* Create and memoize a wrapper component for the specified symbol. */
+export const Reactor = new Proxy<Reactor>({} as Reactor, {
+  get: (_, name: string) => {
+    /* Create and memoize a wrapper component for the specified property. */
     if (!cache[name]) {
-      const constructor = THREE[name as keyof typeof THREE] as IConstructable
+      /* Try and find a constructor within the THREE namespace. */
+      const constructor = THREE[name as THREEKey] as IConstructable
 
-      if (!constructor)
-        throw `Can't find THREE.${name}, so I can't create a component around it, either. Boo!`
-      ;(cache[name] as ReactorComponent<typeof constructor>) = makeComponent(constructor, name)
+      /* If nothing could be found, bail. */
+      if (!constructor) return undefined
+
+      /* Otherwise, create and memoize a component for that constructor. */
+      cache[name] = makeComponent(constructor, name)
     }
 
     return cache[name]

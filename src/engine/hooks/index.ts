@@ -1,8 +1,8 @@
 import { UpdateFunction } from "../useEngineLoop"
-import { useTrinity } from "./useTrinity"
+import { useEngine } from "./useEngine"
 
-export { onResize } from "./onResize"
-export { useTrinity } from "./useTrinity"
+export { useOnResize } from "./useOnResize"
+export { useEngine } from "./useEngine"
 export { useAutomaticTriggerFrame } from "./useAutomaticTriggerFrame"
 
 /**
@@ -10,8 +10,8 @@ export { useAutomaticTriggerFrame } from "./useAutomaticTriggerFrame"
  *
  * @param fn Callback function to execute.
  */
-export const onUpdate = (fn: UpdateFunction) => {
-  const { useUpdateFunction } = useTrinity()
+export const useOnUpdate = (fn: UpdateFunction) => {
+  const { useUpdateFunction } = useEngine()
   useUpdateFunction("update", fn)
 }
 
@@ -22,8 +22,8 @@ export const onUpdate = (fn: UpdateFunction) => {
  *
  * @param fn Callback function to execute.
  */
-export const onLateUpdate = (fn: UpdateFunction) => {
-  const { useUpdateFunction } = useTrinity()
+export const useOnLateUpdate = (fn: UpdateFunction) => {
+  const { useUpdateFunction } = useEngine()
   useUpdateFunction("lateUpdate", fn)
 }
 
@@ -34,12 +34,12 @@ export const onLateUpdate = (fn: UpdateFunction) => {
  *
  * @param fn Callback function to execute.
  */
-export const onFrame = (fn: UpdateFunction) => {
-  const { useUpdateFunction } = useTrinity()
+export const useOnFrame = (fn: UpdateFunction) => {
+  const { useUpdateFunction } = useEngine()
   useUpdateFunction("frame", fn)
 }
 
-export const onRender = (fn: UpdateFunction) => {
-  const { useUpdateFunction } = useTrinity()
+export const useOnRender = (fn: UpdateFunction) => {
+  const { useUpdateFunction } = useEngine()
   useUpdateFunction("render", fn)
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Scene } from "three"
-import { ThreeObjectWithOptionalEventHandlers } from "../engine/types"
+import { ThreeObjectWithOptionalEventHandlers } from "../types"
 
 /**
  * Manages the lifecycle of a THREE.* object instance, making sure it gets disposed once

@@ -1,10 +1,13 @@
 import React, { forwardRef, useContext, useEffect } from "react"
 import { BufferGeometry, Fog, Geometry, Material, Object3D } from "three"
-import { applyProps, applyRef, IStringIndexable } from "../common"
+import { applyProps, applyRef } from "../common"
 import { applyEventProps } from "../common/applyProps"
-import { ThreeObjectWithOptionalEventHandlers } from "../engine/types"
+import {
+  ReactorComponentProps,
+  ThreeObjectWithOptionalEventHandlers,
+  IStringIndexable
+} from "../types"
 import ParentContext from "./ParentContext"
-import { ReactorComponentProps } from "./types"
 import { useManagedThreeObject } from "./useManagedThreeObject"
 
 /**

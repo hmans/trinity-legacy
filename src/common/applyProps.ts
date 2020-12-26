@@ -1,5 +1,4 @@
-import { ThreeObjectWithOptionalEventHandlers } from "../engine"
-import { IStringIndexable } from "./types"
+import { IStringIndexable, ThreeObjectWithOptionalEventHandlers } from "../types"
 
 /**
  * Convenience method for setting (potentially nested) properties on an object.

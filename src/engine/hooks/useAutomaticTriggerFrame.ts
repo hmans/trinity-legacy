@@ -1,11 +1,11 @@
 import { useEffect } from "react"
-import { useTrinity } from "./useTrinity"
+import { useEngine } from "./useEngine"
 
 /**
  * Makes sure that a new frame is rendered every time the component is rendered.
  */
 export const useAutomaticTriggerFrame = () => {
-  const { triggerFrame } = useTrinity()
+  const { triggerFrame } = useEngine()
 
   useEffect(() => {
     triggerFrame()

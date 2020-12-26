@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
 import * as THREE from "three"
 import { forwardRefReactor, Reactor } from "../reactor"
-import { onResize, useTrinity } from "./hooks"
+import { useOnResize, useEngine } from "./hooks"
 import { useSceneEventHandling } from "./useSceneEventHandling"
 import { useSceneRendering } from "./useSceneRendering"
 
@@ -34,8 +34,8 @@ export const Scene = forwardRefReactor<
   const eventHandlers = useSceneEventHandling(scene, camera)
 
   /* When the viewport resizes and we have a camera, adjust it automatically */
-  const { triggerFrame } = useTrinity()
-  onResize((width, height) => {
+  const { triggerFrame } = useEngine()
+  useOnResize((width, height) => {
     if (!camera) return
 
     if (camera instanceof THREE.PerspectiveCamera) {

@@ -1,5 +1,10 @@
-import * as THREE from "three"
-import { SceneEventHandlerProps, ThreeObjectWithOptionalEventHandlers } from "../engine"
+export interface IStringIndexable {
+  [key: string]: any
+}
+
+export interface IConstructable<T = any> {
+  new (...args: any[]): T
+}
 
 /** The wrapper component we will be generating to wrap around THREE classes. */
 export type ReactorComponent<T, ExtraProps = {}> = React.ForwardRefExoticComponent<
@@ -66,4 +71,29 @@ type ChildrenProp = { children?: React.ReactNode }
 type AttachProp = {
   /** Attach the object to the parent property specified here. */
   attach?: string
+}
+
+/**
+ * Just like PointerEvent, but with some added Trinity specific properties.
+ */
+export type TrinityPointerEvent = React.PointerEvent & {
+  intersection: THREE.Intersection
+  propagating: boolean
+}
+
+export type TrinityPointerEventHandler = (event: TrinityPointerEvent) => void
+
+/** An object instance from the THREE.* namespace with additional Trinity event handlers. */
+export type ThreeObjectWithOptionalEventHandlers<T = any> = T & {
+  /** A dictionary holding event handlers attached to this object. */
+  __handlers?: { [eventName: string]: TrinityPointerEventHandler | undefined }
+  dispose?: Function
+}
+
+export type SceneEventHandlerProps = {
+  onPointerDown?: TrinityPointerEventHandler
+  onPointerUp?: TrinityPointerEventHandler
+  onPointerMove?: TrinityPointerEventHandler
+  onPointerEnter?: TrinityPointerEventHandler
+  onPointerLeave?: TrinityPointerEventHandler
 }
