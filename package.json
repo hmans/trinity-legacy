@@ -19,7 +19,8 @@
     "build:ts": "tsc",
     "build:rollup": "rollup -c",
     "watch": "yarn build:ts -w",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "yarn build && yarn test"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.2",
