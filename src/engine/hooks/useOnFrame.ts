@@ -9,7 +9,7 @@ import { useEngine } from "./useEngine"
  * @param fn Callback function to execute.
  */
 
-export const useOnFrame = (fn: UpdateFunction) => {
+export const useOnFrame = (fn: UpdateFunction, deps?: any[]) => {
   const { useUpdateFunction } = useEngine()
-  useUpdateFunction("frame", fn)
+  useUpdateFunction("frame", fn, deps)
 }

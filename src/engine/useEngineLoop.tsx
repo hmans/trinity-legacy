@@ -16,7 +16,11 @@ export const useEngineLoop = (stats: Stats, statsViewer?: StatsViewer, deps: any
   const api = {
     triggerFrame: () => (state.renderNextFrame = true),
 
-    useUpdateFunction: (category: keyof typeof state.callbacks, fn: UpdateFunction) => {
+    useUpdateFunction: (
+      category: keyof typeof state.callbacks,
+      fn: UpdateFunction,
+      deps?: any[]
+    ) => {
       useEffect(() => {
         /* Initialize the category if necessart */
         if (!state.callbacks[category]) {
@@ -30,7 +34,7 @@ export const useEngineLoop = (stats: Stats, statsViewer?: StatsViewer, deps: any
           /* And remove it again on cleanup */
           state.callbacks[category] = state.callbacks[category].filter((f) => f !== fn)
         }
-      }, [fn])
+      }, deps || [fn])
     }
   }
 

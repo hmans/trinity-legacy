@@ -6,7 +6,7 @@ export type EngineContext = {
   renderer: THREE.WebGLRenderer
 
   triggerFrame: () => void
-  useUpdateFunction: (category: string, fn: UpdateFunction) => void
+  useUpdateFunction: (category: string, fn: UpdateFunction, deps?: any[]) => void
 }
 
 export const EngineContext = React.createContext<EngineContext>({} as EngineContext)

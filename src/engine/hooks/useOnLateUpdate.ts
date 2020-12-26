@@ -9,7 +9,7 @@ import { useEngine } from "./useEngine"
  * @param fn Callback function to execute.
  */
 
-export const useOnLateUpdate = (fn: UpdateFunction) => {
+export const useOnLateUpdate = (fn: UpdateFunction, deps?: any[]) => {
   const { useUpdateFunction } = useEngine()
-  useUpdateFunction("lateUpdate", fn)
+  useUpdateFunction("lateUpdate", fn, deps)
 }
