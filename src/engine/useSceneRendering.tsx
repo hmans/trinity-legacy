@@ -1,5 +1,6 @@
 import * as THREE from "three"
-import { useOnRender, useEngine } from "./hooks"
+import { useEngine } from "./hooks"
+import { useOnRender } from "./useOnRender"
 
 export const useSceneRendering = (
   scene: THREE.Scene,
