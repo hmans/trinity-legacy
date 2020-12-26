@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist cjs",
+    "dev": "yarn watch",
     "build": "yarn clean && yarn build:ts",
     "build:ts": "tsc",
     "build:rollup": "rollup -c",
