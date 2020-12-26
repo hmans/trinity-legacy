@@ -12,6 +12,7 @@
     "dist",
     "cjs"
   ],
+  "sideEffects": false,
   "scripts": {
     "clean": "rimraf dist cjs",
     "dev": "yarn watch",
