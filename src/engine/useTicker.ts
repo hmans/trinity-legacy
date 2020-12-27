@@ -2,8 +2,6 @@ import React from "react"
 
 export const useTicker = (tickFn: (dt: number) => void, deps: any[]) => {
   React.useLayoutEffect(() => {
-    console.log("Starting ticker")
-
     let lastNow = performance.now()
     let alive = true
 
@@ -23,7 +21,6 @@ export const useTicker = (tickFn: (dt: number) => void, deps: any[]) => {
     tick()
 
     return () => {
-      console.log("Stopping ticker")
       alive = false
     }
   }, deps)
