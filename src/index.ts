@@ -1,5 +1,17 @@
+/* Types */
+export * from "./types"
+
+/* Common */
+export { applyProps, applyEventProps, applyRef } from "./common"
+
 /* Reactor */
-export { Reactor, Primitive, useManagedThreeObject, makeComponent } from "./reactor"
+export {
+  Reactor,
+  Primitive,
+  useManagedThreeObject,
+  makeComponent,
+  forwardRefReactor
+} from "./reactor"
 
 /* Engine */
 export { Engine } from "./engine/Engine"
