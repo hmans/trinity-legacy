@@ -7,15 +7,15 @@
 
 # This package is currently super-duper experimental. Please do not use it. It is an extraction from my current project, and under heavy flux. There is no documentation, in an effort to really, truly, utterly stop you from using it.
 
-## SUMMARY
+## OVERVIEW
 
 Trinity is a component framework for building games or similar interactive media with **React** and **Three.js**.
 
-## EXAMPLES & DEMOS
+### Examples & Demos
 
 Please check out the [Trinity Examples](https://trinity-examples.netlify.app/) site. Every example has its source code included, and has a link to a Codesandbox where you can experiment with it.
 
-## BUILT WITH TRINITY
+### Built with Trinity
 
 - [Trinity Examples](https://trinity-examples.netlify.app/)
 
