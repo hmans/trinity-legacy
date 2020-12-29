@@ -6,3 +6,31 @@
 # ☢️ TRINITY
 
 # This package is currently super-duper experimental. Please do not use it. It is an extraction from my current project, and under heavy flux. There is no documentation, in an effort to really, truly, utterly stop you from using it.
+
+## SUMMARY
+
+Trinity is a component framework for building games or similar interactive media with **React** and **Three.js**.
+
+## EXAMPLES & DEMOS
+
+Please check out the [Trinity Examples](https://trinity-examples.netlify.app/) site. Every example has its source code included, and has a link to a Codesandbox where you can experiment with it.
+
+## BUILT WITH TRINITY
+
+- [Trinity Examples](https://trinity-examples.netlify.app/)
+
+## GETTING STARTED
+
+## Adding Trinity to your project
+
+```
+npm install -D @hmans/trinity
+```
+
+or
+
+```
+yarn add -D @hmans/trinity
+```
+
+**NOTE:** Trinity is currently only built as a 100% ESM package, meaning that you can only use it in an environment that supports ES/JS modules.
