@@ -11,11 +11,11 @@
 
 Trinity is a component framework for building games or similar interactive media with **React** and **Three.js**.
 
-### Examples & Demos
+#### Examples & Demos
 
 Please check out the [Trinity Examples](https://trinity-examples.netlify.app/) site. Every example has its source code included, and has a link to a Codesandbox where you can experiment with it.
 
-### Built with Trinity
+#### Built with Trinity
 
 - [Trinity Examples](https://trinity-examples.netlify.app/)
 
