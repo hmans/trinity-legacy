@@ -5,16 +5,16 @@
   "repository": "git@github.com:hmans/trinity.git",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
-  "main": "cjs/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "type": "module",
   "files": [
-    "dist",
-    "cjs"
+    "**/*"
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf dist cjs",
+    "clean": "git clean -X --force --quiet",
     "dev": "yarn watch",
     "build": "yarn clean && yarn build:ts",
     "build:ts": "tsc",
@@ -31,12 +31,6 @@
     "jest": "^26.6.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.35.1",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.29.0",
     "three": "^0.124.0",
     "ts-jest": "^26.4.4",
     "typescript": "^4.1.3"
