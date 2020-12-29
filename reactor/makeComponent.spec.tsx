@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react"
 import React from "react"
 import { Mesh, Vector3 } from "three"
-import { ThreeObjectWithOptionalEventHandlers } from "../../engine"
-import { makeComponent } from "../../reactor/makeComponent"
+import { ThreeObjectWithOptionalEventHandlers } from "../types"
+import { makeComponent } from "./makeComponent"
 
 describe("makeComponent", () => {
   const Component = makeComponent(Mesh)

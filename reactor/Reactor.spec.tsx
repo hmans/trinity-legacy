@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react"
 import React from "react"
 import { Mesh } from "three"
-import { Reactor } from "../../reactor/Reactor"
+import { Reactor } from "./Reactor"
 
 describe("makeComponent", () => {
   const ref = React.createRef<Mesh>()
