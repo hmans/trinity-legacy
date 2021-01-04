@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   verbose: true,
   preset: "ts-jest",
   testMatch: ["**/?(*.)+(spec|test).+(ts|tsx|js)"],
