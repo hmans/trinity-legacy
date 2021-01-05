@@ -12,8 +12,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "checkJs": false,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "outDir": "./lib/"
   },
-  "include": ["**/*"],
+  "include": ["src"],
   "exclude": ["node_modules", "**/*.spec.*", "**/*.test.*"]
 }
