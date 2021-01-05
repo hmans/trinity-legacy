@@ -2,7 +2,7 @@
 export * from "./types"
 
 /* Reactor */
-export { Reactor, Primitive } from "./reactor"
+export { forwardRefReactor, Reactor, Primitive } from "./reactor"
 
 /* Engine */
 export { Engine } from "./engine/Engine"
